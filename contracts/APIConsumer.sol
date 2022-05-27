@@ -48,9 +48,8 @@ contract APIConsumer is ChainlinkClient {
      */
     function requestReputationData(string memory _query) public returns (bytes32 requestId) {
         Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfill.selector);
-
         // Set the URL to perform the GET request on
-        string memory uri = string(bytes.concat(bytes("https://ormi.herokuapp.com/data?"), bytes(_query)));
+        string memory uri = string(bytes.concat(bytes("https://chainlink-hack-api.herokuapp.com/api/"), bytes(_query)));
 
         // Example query: "https://ormi.herokuapp.com/data?id=0x2&type=ETH"
         request.add("get", uri);

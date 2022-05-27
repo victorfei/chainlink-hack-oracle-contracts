@@ -35,7 +35,7 @@ task("verify-contracts", "verify deployed api consumer contracdt").setAction(
 
   await hre.run('verify:verify', {
     // TODO replace with your own API Consumer contract address.
-    address: '0xc9A95a8430FAb6A15aF2fc38A476F259647164a4',
+    address: '0x0C3F161489E265f6b4d8Aa04f27F3CdC9346dED6',
     constructorArguments: [
       oracle,
       jobId,
